@@ -5,13 +5,11 @@ const Tarjeta = ({ pelicula }) => {
   const { Poster, Title, Type, Year } = pelicula;
   return (
     <div
-      className="flex flex-col justify-between sm:w-1/4 lg:w-1/6 rounded-md"
+      className="flex flex-col justify-between rounded-md shadow-md shadow-black w-36 h-52 sm:w-48 sm:h-64 md:w-58 md:h-72 lg:w-56 lg:h-80"
       style={{
         backgroundImage: `url(${Poster})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
-        width: "200px",
-        height: "300px",
       }}
     >
       <div>
@@ -19,6 +17,9 @@ const Tarjeta = ({ pelicula }) => {
           className="text-gray-100 text-xl text-center font-bold bg-black bg-opacity-60 rounded-full w-8 h-full ml-5 mt-1  hover:cursor-pointer hover:text-black hover:bg-gray-100 hover:bg-opacity-60 transition-colors duration-500"
           onClick={() => {
             setVerInformacion(!verInformacion);
+            setTimeout(() => {
+              setVerInformacion(false);
+            }, 3000);
           }}
         >
           i
@@ -26,7 +27,7 @@ const Tarjeta = ({ pelicula }) => {
       </div>
 
       {verInformacion && (
-        <div className="bg-gray-900 bg-opacity-80 rounded-b-md ">
+        <div className="bg-gray-900 bg-opacity-80 rounded-b-md">
           <div className="flex justify-between mt-1 p-2">
             <p className="font-semibold text-gray-200 text-md ">{Title}</p>
             <p className="text-gray-200 pl-2 text-md font-extralight">{Year}</p>

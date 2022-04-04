@@ -11,7 +11,7 @@ const Body = () => {
   }, []);
 
   return (
-    <div className="flex justify-center gap-5 flex-wrap m-auto">
+    <div className="flex flex-wrap gap-6 justify-around mx-5">
       {peliculas.map((pelicula, index) => {
         console.log(pelicula);
         return <Tarjeta key={index} pelicula={pelicula} />;

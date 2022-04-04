@@ -1,9 +1,11 @@
+
 const Header = ({ setUrlState }) => {
+  const apiKey = "76af91cc";
   const changeUrl = (e) => {
   
     let delayDebounceFn = setTimeout(() => {
         setUrlState(
-          `https://www.omdbapi.com/?s=${e.target.value}&apikey=76af91cc`
+          `https://www.omdbapi.com/?s=${e.target.value}&apikey=${apiKey}`
         );
         clearTimeout(delayDebounceFn);
     }, 3000);
@@ -13,7 +15,7 @@ const Header = ({ setUrlState }) => {
       <p>Movies</p>
       <input
         type="text"
-        className="mr-4  w-40 text-xs py-2 px-2 transition-shadow shadow-md border-opacity-40 focus:outline-none focus:text-pink-700 focus:font-bold bg-gray-100 focus:bg-gray-100 focus:shadow-inner rounded-md"
+        className="mr-4  w-40 text-xs py-2 px-2 transition-shadow shadow-md border-opacity-40 focus:outline-none focus:text-pink-700 focus:font-semibold bg-gray-100 focus:bg-gray-100 focus:shadow-inner rounded-md"
         placeholder="Type the name"
         onChange={(e) => changeUrl(e)}
       />

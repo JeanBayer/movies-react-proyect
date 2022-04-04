@@ -33,14 +33,19 @@ const Tarjeta = ({ pelicula }) => {
             <p className="text-gray-200 pl-2 text-md font-extralight">{Year}</p>
           </div>
 
-          <div className="flex justify-center mx-1 px-3 py-2 bg-gray-800 hover:bg-gray-700 hover:cursor-pointer rounded-md transition-colors duration-300">
+          <div className="flex justify-center mx-1 px-3 py-2 bg-gray-800 hover:bg-gray-700 hover:cursor-pointer rounded-md transition-colors duration-300"
+          onClick={()=>{
+            window.open(`https://www.imdb.com/title/${pelicula.imdbID}`)
+          }}>
             <p className="text-sky-600 font-medium text-sm">+</p>
             <p className="text-sky-600 pl-2 font-medium text-sm">
-              Lista de Reproducción
+              Open in IMDB
             </p>
           </div>
 
-          <div className="flex justify-around mx-auto mt-1 mb-2 w-min px-3  hover:bg-gray-800 hover:cursor-pointer text-center text-gray-300 rounded-md transition-colors duration-300">
+          <div className="flex justify-around mx-auto mt-1 mb-2 w-min px-3  hover:bg-gray-800 hover:cursor-pointer text-center text-gray-300 rounded-md transition-colors duration-300" onClick={()=>{
+            window.open(`https://www.youtube.com/results?search_query=${Title}+${Year}+trailer`)
+          }}>
             <p>{">"}</p>
             <p className="text-xs py-2 font-bold pl-3">Trailer</p>
           </div>

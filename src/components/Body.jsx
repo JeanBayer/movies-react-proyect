@@ -11,12 +11,12 @@ const Body = () => {
   }, []);
 
   return (
-    // <div>
-    //   {peliculas.map((pelicula, index) => {
-    //     console.log(pelicula);
-    //     return <Tarjeta key={index} pelicula={pelicula} />;
-    //   })}
-    // </div>
+    <div className="flex justify-center gap-5 flex-wrap m-auto">
+      {peliculas.map((pelicula, index) => {
+        console.log(pelicula);
+        return <Tarjeta key={index} pelicula={pelicula} />;
+      })}
+    </div>
   );
 };
 

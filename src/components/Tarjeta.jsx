@@ -1,12 +1,50 @@
+import { useState } from "react";
+
 const Tarjeta = ({ pelicula }) => {
+  const [verInformacion, setVerInformacion] = useState(false);
   const { Poster, Title, Type, Year } = pelicula;
   return (
-    <div>
-      <p>{Title}</p>
-      <img src={Poster} alt="" />
+    <div
+      className="flex flex-col justify-between sm:w-1/4 lg:w-1/6 rounded-md"
+      style={{
+        backgroundImage: `url(${Poster})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        width: "200px",
+        height: "300px",
+      }}
+    >
+      <div>
+        <p
+          className="text-gray-100 text-xl text-center font-bold bg-black bg-opacity-60 rounded-full w-8 h-full ml-5 mt-1  hover:cursor-pointer hover:text-black hover:bg-gray-100 hover:bg-opacity-60 transition-colors duration-500"
+          onClick={() => {
+            setVerInformacion(!verInformacion);
+          }}
+        >
+          i
+        </p>
+      </div>
 
-      <p>{Type}</p>
-      <p>{Year}</p>
+      {verInformacion && (
+        <div className="bg-gray-900 bg-opacity-80 rounded-b-md ">
+          <div className="flex justify-between mt-1 p-2">
+            <p className="font-semibold text-gray-200 text-md ">{Title}</p>
+            <p className="text-gray-200 pl-2 text-md font-extralight">{Year}</p>
+          </div>
+
+          <div className="flex justify-center mx-1 px-3 py-2 bg-gray-800 hover:bg-gray-700 hover:cursor-pointer rounded-md transition-colors duration-300">
+            <p className="text-sky-600 font-medium text-sm">+</p>
+            <p className="text-sky-600 pl-2 font-medium text-sm">
+              Lista de Reproducción
+            </p>
+          </div>
+
+          <div className="flex justify-around mx-auto mt-1 mb-2 w-min px-3  hover:bg-gray-800 hover:cursor-pointer text-center text-gray-300 rounded-md transition-colors duration-300">
+            <p>{">"}</p>
+            <p className="text-xs py-2 font-bold pl-3">Trailer</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

@@ -8,7 +8,7 @@ This App uses the [OMDb API](https://www.omdbapi.com/), which gives us a collect
 - TailwindCSS
 - Vite
 
-![image](https://github.com/JeanBayer/img_save_animals/blob/main/ezgif.com-gif-maker.gif)
+![image](https://github.com/JeanBayer/movies-react-proyect/blob/main/assets/gif/video_movies_react.gif)
 
 ## About me
 
